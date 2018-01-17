@@ -1,6 +1,7 @@
 # RotorPirates
 Compare Rates from RaceFlight, BetaFlight, and KISS with sliders!
 
+![Screenshot](https://i.imgur.com/fCOrTfn.png)
 
 ### Features
 - BetaFlight Rates
