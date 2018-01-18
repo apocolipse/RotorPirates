@@ -44,7 +44,7 @@ var bfcalc = function(rcCommand, rcRate, expo, superRate) {
     }
 
     if(rcRate > 2.0)
-        rcRate = rcRate + (14.55 * (rcRate - 2.0))
+        rcRate = rcRate + (14.54 * (rcRate - 2.0))
 
     if(expo != 0)
         rcCommand = rcCommand * Math.abs(rcCommand)**3 * expo + rcCommand * (1.0 - expo)
