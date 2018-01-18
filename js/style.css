@@ -1,0 +1,48 @@
+body {
+    text-align: center;
+    background-image: url(http://monsterquads.eu/wp-content/themes/simple-shop/images/pattern.png);
+    background-position: left top;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    color: #ccc;
+}
+
+#curve_chart {
+    margin: 0 auto;
+}
+
+.block-title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.input-field {
+    /*background: #BABABA;*/
+    display:inline-block;
+    width: 140px;
+    margin-left:5px;
+    margin-right:5px;
+    padding: 2px;
+    text-align: right;
+
+    border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    border: 1px solid #ddd;
+}
+
+.input-title {
+    display:inline-block;
+    width: 150px;
+    padding: 2px;
+}
+
+.rateBox {
+    margin-top: 15px;
+}
+
+.footer {
+    margin-top:30px;
+    margin-bottom:50px;
+}
