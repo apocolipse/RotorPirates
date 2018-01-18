@@ -164,36 +164,68 @@ $( document ).ready(function() {
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
 
-    $('#rfRateSlider').on('mousemove', function() {
+
+    $('#rfRateSlider').on('input', function() {
         $('#rfRate').val(this.value).change();
     });
-    $('#rfExpoSlider').on('mousemove', function() {
+    $('#rfExpoSlider').on('input', function() {
         $('#rfExpo').val(this.value).change();
     });
-    $('#rfAcroSlider').on('mousemove', function() {
+    $('#rfAcroSlider').on('input', function() {
         $('#rfAcro').val(this.value).change();
     });
 
-    $('#bfRateSlider').on('mousemove', function() {
+    $('#bfRateSlider').on('input', function() {
         $('#bfRate').val(this.value).change();
     });
-    $('#bfExpoSlider').on('mousemove', function() {
+    $('#bfExpoSlider').on('input', function() {
         $('#bfExpo').val(this.value).change();
     });
-    $('#bfSuperSlider').on('mousemove', function() {
+    $('#bfSuperSlider').on('input', function() {
         $('#bfSuper').val(this.value).change();
     });
 
-    $('#kissRcRateSlider').on('mousemove', function() {
+    $('#kissRcRateSlider').on('input', function() {
         $('#kissRcRate').val(this.value).change();
     });
-    $('#kissRateSlider').on('mousemove', function() {
+    $('#kissRateSlider').on('input', function() {
         $('#kissRate').val(this.value).change();
     });
-    $('#kissCurveSlider').on('mousemove', function() {
+    $('#kissCurveSlider').on('input', function() {
         $('#kissCurve').val(this.value).change();
     });
 
+
+
+    $('#rfRate').on('input change paste keyup', function() {
+        $('#rfRateSlider').val(this.value).change();
+    });
+    $('#rfExpo').on('input', function() {
+        $('#rfExpoSlider').val(this.value).change();
+    });
+    $('#rfAcro').on('input', function() {
+        $('#rfAcroSlider').val(this.value).change();
+    });
+
+    $('#bfRate').on('input', function() {
+        $('#bfRateSlider').val(this.value).change();
+    });
+    $('#bfExpo').on('input', function() {
+        $('#bfExpoSlider').val(this.value).change();
+    });
+    $('#bfSuper').on('input', function() {
+        $('#bfSuperSlider').val(this.value).change();
+    });
+
+    $('#kissRcRate').on('input', function() {
+        $('#kissRcRateSlider').val(this.value).change();
+    });
+    $('#kissRate').on('input', function() {
+        $('#kissRateSlider').val(this.value).change();
+    });
+    $('#kissCurve').on('input', function() {
+        $('#kissCurveSlider').val(this.value).change();
+    });
 
 
     $(".input-field").on("change paste keyup", function() {
