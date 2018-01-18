@@ -43,7 +43,7 @@ def rfcalc(rcCommand, rate, expo, acrop):
 def bfcalc(rcCommand, rcRate, expo, superRate):
     clamp = lambda n, minn, maxn: max(min(maxn, n), minn)
     if rcRate > 2.0:
-        rcRate = rcRate + (14.55 * (rcRate - 2.0))
+        rcRate = rcRate + (14.54 * (rcRate - 2.0))
 
     if expo != 0:
         rcCommand = rcCommand * abs(rcCommand)**3  * expo + rcCommand * (1.0 - expo)
