@@ -1,0 +1,84 @@
+body {
+    text-align: center;
+    color: #ccc;
+}
+
+#curve_chart {
+    margin: 0 auto;
+}
+
+.block-title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.input-field {
+    /*background: #BABABA;*/
+    display:inline-block;
+    width: 140px;
+    margin-left:5px;
+    margin-right:5px;
+    padding: 2px;
+    text-align: right;
+
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.input-title {
+    display:inline-block;
+    width: 150px;
+    padding: 2px;
+}
+
+.rateBox {
+    margin-top: 15px;
+}
+
+.footer {
+    margin-top:30px;
+    margin-bottom:50px;
+}
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 150px;
+    height: 5px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    border-radius: 5px;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 10px; /* Set a specific slider handle width */
+    height: 10px; /* Slider handle height */
+    background: #4CAF50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 5px;   
+}
+
+.slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #4CAF50; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
