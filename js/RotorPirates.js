@@ -94,15 +94,16 @@ var reset_button_on_clicked = function() {
 }
 
 function drawChart() {
-    rfRate = parseFloat($('input[name=rfRate]').val(), 10);
-    rfExpo = parseFloat($('input[name=rfExpo]').val(), 10);
-    rfAcro = parseFloat($('input[name=rfAcro]').val(), 10);
-    bfRate = parseFloat($('input[name=bfRate]').val(), 10);
-    bfExpo = parseFloat($('input[name=bfExpo]').val(), 10);
-    bfSuper = parseFloat($('input[name=bfSuper]').val(), 10);
-    kissRate = parseFloat($('input[name=kissRate]').val(), 10);
-    kissCurve = parseFloat($('input[name=kissCurve]').val(), 10);
-    kissRcRate = parseFloat($('input[name=kissRcRate]').val(), 10);
+    rfRate = parseFloat($('#rfRate').val(), 10);
+    rfExpo = parseFloat($('#rfExpo').val(), 10);
+    rfAcro = parseFloat($('#rfAcro').val(), 10);
+    bfRate = parseFloat($('#bfRate').val(), 10);
+    bfExpo = parseFloat($('#bfExpo').val(), 10);
+    bfSuper = parseFloat($('#bfSuper').val(), 10);
+    kissRate = parseFloat($('#kissRate').val(), 10);
+    kissCurve = parseFloat($('#kissCurve').val(), 10);
+    kissRcRate = parseFloat($('#kissRcRate').val(), 10);
+
     // console.log(rfRate, rfExpo, rfAcro);
     // console.log(bfRate, bfExpo, bfSuper);
     // console.log(kissRate, kissCurve, kissRcRate);
@@ -120,7 +121,7 @@ function drawChart() {
             i,
             rfcalc(i, rfRate, rfExpo, rfAcro),
             bfcalc(i, bfRate, bfExpo, bfSuper),
-            kscalc(i, kissRate, kissCurve, kissRcRate) 
+            kscalc(i, kissRate, kissCurve, kissRcRate)
         ]);
     }
 
@@ -129,7 +130,7 @@ function drawChart() {
         i,
         rfcalc(i, rfRate, rfExpo, rfAcro),
         bfcalc(i, bfRate, bfExpo, bfSuper),
-        kscalc(i, kissRate, kissCurve, kissRcRate) 
+        kscalc(i, kissRate, kissCurve, kissRcRate)
     ]);
 
     var options = {
@@ -154,7 +155,6 @@ function drawChart() {
         }
     };
 
-    //var chart = new google.visualization.Line(document.getElementById('curve_chart'));
     var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
 
     chart.draw(data, options);
@@ -163,6 +163,38 @@ function drawChart() {
 $( document ).ready(function() {
     google.charts.load('current', {'packages':['corechart']});
     google.charts.setOnLoadCallback(drawChart);
+
+    $('#rfRateSlider').on('mousemove', function() {
+        $('#rfRate').val(this.value).change();
+    });
+    $('#rfExpoSlider').on('mousemove', function() {
+        $('#rfExpo').val(this.value).change();
+    });
+    $('#rfAcroSlider').on('mousemove', function() {
+        $('#rfAcro').val(this.value).change();
+    });
+
+    $('#bfRateSlider').on('mousemove', function() {
+        $('#bfRate').val(this.value).change();
+    });
+    $('#bfExpoSlider').on('mousemove', function() {
+        $('#bfExpo').val(this.value).change();
+    });
+    $('#bfSuperSlider').on('mousemove', function() {
+        $('#bfSuper').val(this.value).change();
+    });
+
+    $('#kissRcRateSlider').on('mousemove', function() {
+        $('#kissRcRate').val(this.value).change();
+    });
+    $('#kissRateSlider').on('mousemove', function() {
+        $('#kissRate').val(this.value).change();
+    });
+    $('#kissCurveSlider').on('mousemove', function() {
+        $('#kissCurve').val(this.value).change();
+    });
+
+
 
     $(".input-field").on("change paste keyup", function() {
         drawChart();

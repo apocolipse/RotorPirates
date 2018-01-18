@@ -2,7 +2,7 @@
     <head>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-        
+
         <link rel="stylesheet" href="style.css">
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
@@ -19,9 +19,14 @@
                 <span class="input-title">Acro+:</span>
             </div>
             <div>
-                <input type="number" name="rfRate" min="0" max="2000" value="400" class="input-field"/>
-                <input type="number" name="rfExpo" min="0" max="100" value="50" class="input-field"/>
-                <input type="number" name="rfAcro" min="0" max="1000" value="140" class="input-field"/>
+                <input type="number" id="rfRate" min="0" max="2000" value="400" class="input-field"/>
+                <input type="number" id="rfExpo" min="0" max="100"  value="50"  class="input-field"/>
+                <input type="number" id="rfAcro" min="0" max="1000" value="140" class="input-field"/>
+            </div>
+            <div>
+                <input type="range" id="rfRateSlider" class="slider" min="0" max="2000" value="400"/>
+                <input type="range" id="rfExpoSlider" class="slider" min="0" max="100"  value="50" />
+                <input type="range" id="rfAcroSlider" class="slider" min="0" max="1000" value="140"/>
             </div>
         </div>
         <div class="rateBox">
@@ -32,9 +37,14 @@
                 <span class="input-title">RC Expo:</span>
             </div>
             <div>
-                <input type="number" name="bfRate" step="0.01" min="0.00" max="3.00" value="1.00" placeholder='0.00' class="input-field"/>
-                <input type="number" name="bfSuper" step="0.01" min="0.00" max="1.00" value="0.70" placeholder='0.00' class="input-field"/>
-                <input type="number" name="bfExpo" step="0.01" min="0.00" max="1.00" value="0.00" placeholder='0.00' class="input-field"/>
+                <input type="number" id="bfRate"  step="0.01" min="0.00" max="3.00" value="1.00" placeholder='0.00' class="input-field"/>
+                <input type="number" id="bfSuper" step="0.01" min="0.00" max="1.00" value="0.70" placeholder='0.00' class="input-field"/>
+                <input type="number" id="bfExpo"  step="0.01" min="0.00" max="1.00" value="0.00" placeholder='0.00' class="input-field"/>
+            </div>
+            <div>
+                <input type="range" id="bfRateSlider"  class="slider" step="0.01" min="0.00" max="3.00" value="1.00" placeholder='0.00'/>
+                <input type="range" id="bfSuperSlider" class="slider" step="0.01" min="0.00" max="1.00" value="0.70" placeholder='0.00'/>
+                <input type="range" id="bfExpoSlider"  class="slider" step="0.01" min="0.00" max="1.00" value="0.00" placeholder='0.00'/>
             </div>
         </div>
         <div class="rateBox">
@@ -45,9 +55,14 @@
                 <span class="input-title">RC Curve:</span>
             </div>
             <div>
-                <input type="number" name="kissRcRate" step="0.01" min="0.00" max="10.00" value="0.70" placeholder='0.00' class="input-field"/>
-                <input type="number" name="kissRate" step="0.01" min="0.00" max="1.00" value="0.70" placeholder='0.00' class="input-field"/>
-                <input type="number" name="kissCurve" step="0.01" min="0.00" max="1.00" value="0.40" placeholder='0.00' class="input-field"/>
+                <input type="number" id="kissRcRate" step="0.01" min="0.00" max="10.00" value="0.70" placeholder='0.00' class="input-field"/>
+                <input type="number" id="kissRate"   step="0.01" min="0.00" max="1.00" value="0.70" placeholder='0.00' class="input-field"/>
+                <input type="number" id="kissCurve"  step="0.01" min="0.00" max="1.00" value="0.40" placeholder='0.00' class="input-field"/>
+            </div>
+            <div>
+                <input type="range" id="kissRcRateSlider" class="slider" step="0.01" min="0.00" max="10.00" value="0.70" placeholder='0.00'/>
+                <input type="range" id="kissRateSlider"   class="slider" step="0.01" min="0.00" max="1.00" value="0.70" placeholder='0.00'/>
+                <input type="range" id="kissCurveSlider"  class="slider" step="0.01" min="0.00" max="1.00" value="0.40" placeholder='0.00'/>
             </div>
         </div>
         <div class="footer">
