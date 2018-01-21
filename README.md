@@ -2,8 +2,7 @@
 Compare Rates from RaceFlight, BetaFlight, and KISS with sliders!
 
 
-# NEW ONLINE VERSION!!!
-[RotorPirates](https://www.youtube.com/watch?v=o7s5THmbRrE&feature=em-lss)
+# NEW ONLINE VERSION!!!  [CLICK HERE - RotorPirates](https://apocolipse.github.io/RotorPirates/)
 
 
 ![Screenshot](https://i.imgur.com/fCOrTfn.png)
