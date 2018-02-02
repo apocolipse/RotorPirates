@@ -58,29 +58,6 @@ var bfcalc = function(rcCommand, rcRate, expo, superRate) {
     return angleRate
 }
 
-// var sliders_on_changed = function() {
-//     // setup ararys for new plots
-//     rfplot = [rfcalc(g, rfrate_slider.val, rfexpo_slider.val,  rfacrop_slider.val)  for g in t]
-//     bfplot = [bfcalc(g, bfrate_slider.val, bfexpo_slider.val,  bfsuper_slider.val)  for g in t]
-//     ksplot = [kscalc(g, ksrate_slider.val, kscurve_slider.val, ksrcrate_slider.val) for g in t]
-
-//     // set lines to new plots
-//     rfline.set_ydata(rfplot)
-//     bfline.set_ydata(bfplot)
-//     ksline.set_ydata(ksplot)
-//     // updte min/max values
-//     rfmax = np.array(rfplot).max()
-//     bfmax = np.array(bfplot).max()
-//     ksmax = np.array(ksplot).max()
-//     rfmin = np.array(rfplot).min()
-//     bfmin = np.array(bfplot).min()
-//     ksmin = np.array(ksplot).min()
-//     ax.set_ylim([np.array([rfmin, bfmin, ksmin]).min(), np.array([rfmax, bfmax, ksmax]).max()])
-
-//     // update canvas
-//     fig.canvas.draw_idle()
-// }
-
 var reset_button_on_clicked = function() {
     rfrate_slider.reset()
     rfexpo_slider.reset()
@@ -92,7 +69,65 @@ var reset_button_on_clicked = function() {
     kscurve_slider.reset()
     ksrcrate_slider.reset()
 }
+function calcFromRF() {
+    var ratesAPI = "http://api.apocolipse.com/rates?";
+    $.getJSON( ratesAPI, {
+        t: "rf",
+        p1: parseFloat($('#rfRate').val(), 10),
+        p2: parseFloat($('#rfExpo').val(), 10),
+        p3: parseFloat($('#rfAcro').val(), 10)
+      })
+        .done(function( data ) {
+            console.log(data);
+            data = data.replace(/\'/g, '"');
+            handleBruteForceResponse(JSON.parse(data));
 
+        });
+}
+
+function calcFromBF() {
+    var ratesAPI = "http://api.apocolipse.com/rates?";
+    $.getJSON( ratesAPI, {
+        t: "bf",
+        p1: parseFloat($('#bfRate').val(), 10),
+        p2: parseFloat($('#bfExpo').val(), 10),
+        p3: parseFloat($('#bfSuper').val(), 10)
+      })
+        .done(function( data ) {
+            console.log(data);
+            data = data.replace(/\'/g, '"');
+            handleBruteForceResponse(JSON.parse(data));
+
+        });
+}
+
+function calcFromKiss() {
+    var ratesAPI = "http://api.apocolipse.com/rates?";
+    $.getJSON( ratesAPI, {
+        t: "ks",
+        p1: parseFloat($('#kissRate').val(), 10),
+        p2: parseFloat($('#kissCurve').val(), 10),
+        p3: parseFloat($('#kissRcRate').val(), 10)
+      })
+        .done(function( data ) {
+            console.log(data);
+            data = data.replace(/\'/g, '"');
+            handleBruteForceResponse(JSON.parse(data));
+
+        });
+}
+
+function handleBruteForceResponse(data) {
+    $('#rfRate').val(parseFloat(data['rfRate'], 10)).change();
+    $('#rfExpo').val(parseFloat(data['rfexpo'], 10)).change();
+    $('#rfAcro').val(parseFloat(data['rfacroPlus'], 10)).change();
+    $('#bfRate').val(parseFloat(data['bfrcRate'], 10)).change();
+    $('#bfExpo').val(parseFloat(data['bfexpo'], 10)).change();
+    $('#bfSuper').val(parseFloat(data['bfsuperRate'], 10)).change();
+    $('#kissRate').val(parseFloat(data['ksrate'], 10)).change();
+    $('#kissCurve').val(parseFloat(data['ksrcCurve'], 10)).change();
+    $('#kissRcRate').val(parseFloat(data['ksrcRate'], 10)).change();
+}
 function drawChart() {
     rfRate = parseFloat($('#rfRate').val(), 10);
     rfExpo = parseFloat($('#rfExpo').val(), 10);
