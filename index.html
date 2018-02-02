@@ -1,18 +1,21 @@
 <html>
     <head>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 
-        <link rel="stylesheet" href="https://cdn.rawgit.com/apocolipse/RotorPirates/6d8528c9/js/style.css">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/apocolipse/RotorPirates/3b92df58/js/style.css">
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-        <script src="https://cdn.rawgit.com/apocolipse/RotorPirates/c420edbb/js/RotorPirates.js"></script>
+        <script src="https://cdn.rawgit.com/apocolipse/RotorPirates/3b92df58/js/RotorPirates.js"></script>
     </head>
     <body>
         <h3>RotorPirates!</h3>
         <div id="curve_chart" style="width: 900px; height: 500px; margin-top:-70px"></div>
         <div class="rateBox">
             <span class="block-title">RaceFlight Rates</span>
+            <button onclick="calcFromRF()" class="btn btn-secondary">Calc Others</button>
+
             <div>
                 <span class="input-title">Rate:</span>
                 <span class="input-title">Expo:</span>
@@ -31,6 +34,7 @@
         </div>
         <div class="rateBox">
             <span class="block-title">BetaFlight Rates</span>
+            <button onclick="calcFromBF()" class="btn btn-secondary">Calc Others</button>
             <div>
                 <span class="input-title">RC Rate:</span>
                 <span class="input-title">Super Rate:</span>
@@ -49,6 +53,7 @@
         </div>
         <div class="rateBox">
             <span class="block-title">KISS Rates</span>
+            <button onclick="calcFromKiss()" class="btn btn-secondary">Calc Others</button>
             <div>
                 <span class="input-title">RC Rate:</span>
                 <span class="input-title">Rate:</span>
@@ -65,9 +70,9 @@
                 <input type="range" id="kissCurveSlider"  class="slider" step="0.01" min="0.00" max="1.00" value="0.40" placeholder='0.00'/>
             </div>
         </div>
+
         <div class="footer">
             See original code on <a href="https://github.com/apocolipse/RotorPirates">GitHub</a>
-            <br>Special Thanks to Robert Miroszewski for JS/HTML
         </div>
     </body>
 </html>
