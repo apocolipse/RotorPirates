@@ -70,7 +70,7 @@ var reset_button_on_clicked = function() {
     ksrcrate_slider.reset()
 }
 function calcFromRF() {
-    var ratesAPI = "http://api.apocolipse.com/rates?";
+    var ratesAPI = "https://api.apocolipse.com/rates?";
     $.getJSON( ratesAPI, {
         t: "rf",
         p1: parseFloat($('#rfRate').val(), 10),
@@ -86,7 +86,7 @@ function calcFromRF() {
 }
 
 function calcFromBF() {
-    var ratesAPI = "http://api.apocolipse.com/rates?";
+    var ratesAPI = "https://api.apocolipse.com/rates?";
     $.getJSON( ratesAPI, {
         t: "bf",
         p1: parseFloat($('#bfRate').val(), 10),
@@ -102,7 +102,7 @@ function calcFromBF() {
 }
 
 function calcFromKiss() {
-    var ratesAPI = "http://api.apocolipse.com/rates?";
+    var ratesAPI = "https://api.apocolipse.com/rates?";
     $.getJSON( ratesAPI, {
         t: "ks",
         p1: parseFloat($('#kissRate').val(), 10),
