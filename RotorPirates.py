@@ -42,6 +42,9 @@ def rfcalc(rcCommand, rate, expo, acrop):
 # BF rate calculation function
 def bfcalc(rcCommand, rcRate, expo, superRate):
     clamp = lambda n, minn, maxn: max(min(maxn, n), minn)
+    
+    absRcCommand = abs(rcCommand)
+    
     if rcRate > 2.0:
         rcRate = rcRate + (14.54 * (rcRate - 2.0))
 
@@ -50,7 +53,7 @@ def bfcalc(rcCommand, rcRate, expo, superRate):
 
     angleRate = 200.0 * rcRate * rcCommand;
     if superRate != 0:
-        rcSuperFactor = 1.0 / (clamp(1.0 - (abs(rcCommand) * (superRate)), 0.01, 1.00))
+        rcSuperFactor = 1.0 / (clamp(1.0 - (absRcCommand * (superRate)), 0.01, 1.00))
         angleRate *= rcSuperFactor
     return angleRate
 
